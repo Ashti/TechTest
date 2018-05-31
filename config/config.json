@@ -3,9 +3,9 @@
 
         "username": "root",
 
-        "password": "pass",
+        "password": null,
 
-        "database": "data",
+        "database": "inputs.sqlite",
 
         "host": "127.0.0.1",
 

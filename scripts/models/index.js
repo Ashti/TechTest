@@ -6,7 +6,21 @@ var Sequelize = require("sequelize");
 var env = "development";
 var config = require('C:/Users/Ashti/Documents/GitHub/TechTest/config/config.json')[env];
 var sequelize = new Sequelize(config.database, config.username, config.password, config);
+//var sequelize = new Sequelize('inputs', 'bob', 'pass', {
+//      host: 'localhost',
+//      dialect: 'sqlite',
+//      storage: 'path/to/database.sqlite'
+//})
 var db = {};
+
+sequelize
+      .authenticate()
+      .then(() => {
+      console.log('Connection has been established successfully.');
+      })
+      .catch(err => {
+            console.error('Unable to connect to the database:', err);
+      });
 
 __dirname = path.join(path.resolve(), 'scripts', 'models');
 
