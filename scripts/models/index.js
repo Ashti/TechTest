@@ -3,14 +3,12 @@
 var fs = require("fs");
 var path = require("path");
 var Sequelize = require("sequelize");
-var env = "development";
-var config = require('C:/Users/Ashti/Documents/GitHub/TechTest/config/config.json')[env];
-var sequelize = new Sequelize(config.database, config.username, config.password, config);
-//var sequelize = new Sequelize('inputs', 'bob', 'pass', {
-//      host: 'localhost',
-//      dialect: 'sqlite',
-//      storage: 'path/to/database.sqlite'
-//})
+var sequelize = new Sequelize('inputs', 'bob', 'pass', {
+      dialect: 'sqlite',
+      host: 'localhost',
+      storage: './inputs.sqlite'
+})
+
 var db = {};
 
 sequelize
